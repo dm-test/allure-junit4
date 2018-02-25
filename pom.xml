@@ -32,6 +32,13 @@
             <version>${allure-junit4.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Логгер необходим в klasspass для работы Allure @Step -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
