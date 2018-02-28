@@ -30,7 +30,6 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
             <version>${allure-junit4.version}</version>
-            <scope>test</scope>
         </dependency>
         <!-- Логгер необходим в classpath для работы Allure @Step -->
         <dependency>
@@ -38,11 +37,6 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-java-commons</artifactId>
-            <version>2.0-BETA21</version>
         </dependency>
     </dependencies>
 
