@@ -32,7 +32,7 @@
             <version>${allure-junit4.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- Логгер необходим в klasspass для работы Allure @Step -->
+        <!-- Логгер необходим в classpath для работы Allure @Step -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
