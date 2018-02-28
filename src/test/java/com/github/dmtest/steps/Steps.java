@@ -19,9 +19,14 @@ public class Steps {
     }
 
     @Step(value = "Проверка эквивалентности строки {str1} строке {str2}")
-    public static void checkStringEquals(String str1, String str2) throws IOException {
+    public static void checkStringEqualsStep(String str1, String str2) throws IOException {
         Assert.assertTrue("Строки не эквивалентны", str1.equals(str2));
         CommonFunctions.getBytes("picture.jpg");
         CommonFunctions.getBytes("text.txt");
+    }
+
+    @Step(value = "Зачитать джейсон")
+    public static void readJsonStep() throws IOException {
+        CommonFunctions.getBytesAnnotationWithArgs("json.json");
     }
 }

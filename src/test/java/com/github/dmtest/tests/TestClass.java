@@ -24,9 +24,15 @@ public class TestClass {
         Steps.checkSubtractionStep(10, 8, 2);
     }
 
-    @Test
+//    @Test
     public void simpleTest4() throws IOException {
         String darkSouls = "Dark souls 3";
-        Steps.checkStringEquals(darkSouls, darkSouls);
+        Steps.checkStringEqualsStep(darkSouls, darkSouls);
+    }
+
+    @Test
+    public void simpleTest5() throws IOException {
+        Steps.readJsonStep();
+        Assert.assertTrue(true);
     }
 }

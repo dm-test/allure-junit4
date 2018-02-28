@@ -18,4 +18,9 @@ public class CommonFunctions {
         return Files.readAllBytes(Paths.get(RESOURCES, resourceName));
     }
 
+    @Attachment(value = "Вложение", type = "text/plain", fileExtension = ".doc")
+    public static byte[] getBytesAnnotationWithArgs(String resourceName) throws IOException {
+        return Files.readAllBytes(Paths.get(RESOURCES, resourceName));
+    }
+
 }
