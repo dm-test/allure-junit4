@@ -97,6 +97,7 @@ public class TestClass {
         Assert.assertTrue(1 == 2);
     }
 
+    //FIXME: Как слинковать с дефектом в багтреккере?
     @Test
     @Issue(value = "FGY-4627")
     public void simpleTest15() {
