@@ -1,6 +1,7 @@
 package com.github.dmtest.steps;
 
 import com.github.dmtest.utils.CommonFunctions;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.junit.Assert;
 
@@ -28,5 +29,11 @@ public class Steps {
     @Step(value = "Зачитать джейсон")
     public static void readJsonStep() throws IOException {
         CommonFunctions.getBytesAnnotationWithArgs("json.json");
+    }
+
+    @Step(value = "Добавить ссылку на Сбербанк")
+    public static void addLinkSber() {
+        String link = "http://sberbank.ru";
+        Allure.addAttachment("Результат", "text/plain", link);
     }
 }

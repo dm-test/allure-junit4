@@ -1,6 +1,7 @@
 package com.github.dmtest.tests;
 
 import com.github.dmtest.steps.Steps;
+import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -30,9 +31,75 @@ public class TestClass {
         Steps.checkStringEqualsStep(darkSouls, darkSouls);
     }
 
-    @Test
+//    @Test
     public void simpleTest5() throws IOException {
         Steps.readJsonStep();
         Assert.assertTrue(true);
+    }
+
+//    @Test
+    public void simpleTest6() {
+        Steps.addLinkSber();
+        Assert.assertTrue(true);
+    }
+
+
+    /**
+     * dhshfdksjfkzjzkfjzkzzfzfzcz.
+     * //FIXME: Джавадок как дескрипшн не выводится
+     */
+//    @Test
+    @Description(useJavaDoc = true)
+    public void simpleTest7() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Epic(value = "Новый эпик1")
+//    @Test
+    public void simpleTest8() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Epic(value = "Новый эпик2")
+//    @Test
+    public void simpleTest9() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Epics(value = {@Epic(value = "Новый эпик1"), @Epic(value = "Новый эпик2")})
+//    @Test
+    public void simpleTest10() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Feature(value = "Новая фича1")
+//    @Test
+    public void simpleTest11() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Feature(value = "Новая фича2")
+//    @Test
+    public void simpleTest12() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Features(value = {@Feature(value = "Новая фича1"), @Feature(value = "Новая фича2")})
+//    @Test
+    public void simpleTest13() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    //FIXME: Не помечается бомбочкой
+    @Flaky
+//    @Test
+    public void simpleTest14() {
+        Assert.assertTrue(1 == 2);
+    }
+
+    @Test
+    @Issue(value = "FGY-4627")
+    public void simpleTest15() {
+        Assert.assertTrue(1 == 1);
     }
 }
