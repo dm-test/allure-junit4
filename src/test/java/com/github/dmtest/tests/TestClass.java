@@ -3,7 +3,6 @@ package com.github.dmtest.tests;
 import com.github.dmtest.steps.Steps;
 import io.qameta.allure.*;
 import org.junit.Assert;
-import org.junit.Test;
 
 import java.io.IOException;
 
@@ -46,11 +45,17 @@ public class TestClass {
 
     /**
      * dhshfdksjfkzjzkfjzkzzfzfzcz.
-     * //FIXME: Джавадок как дескрипшн не выводится
+     * FIXME: Джавадок как дескрипшн не выводится
      */
 //    @Test
     @Description(useJavaDoc = true)
     public void simpleTest7() {
+        Assert.assertTrue(1 == 1);
+    }
+
+//    @Test
+    @Description(value = "Тест проверяет эквивалентность единицы единице")
+    public void simpleTest7_1() {
         Assert.assertTrue(1 == 1);
     }
 
@@ -98,9 +103,22 @@ public class TestClass {
     }
 
     //FIXME: Как слинковать с дефектом в багтреккере?
-    @Test
+//    @Test
     @Issue(value = "FGY-4627")
     public void simpleTest15() {
+        Assert.assertTrue(1 == 1);
+    }
+
+//    @Test
+    @Link(name = "Ссылка", url = "http://sberbank.ru")
+    public void simpleTest16() {
+        Assert.assertTrue(1 == 1);
+    }
+
+//    @Test
+    @Links(value = {@Link(name = "Ссылка1", url = "http://sberbank.ru"),
+            @Link(name = "Ссылка2", url = "http://yandex.ru")})
+    public void simpleTest17() {
         Assert.assertTrue(1 == 1);
     }
 }
