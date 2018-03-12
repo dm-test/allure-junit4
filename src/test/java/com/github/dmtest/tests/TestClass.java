@@ -63,7 +63,7 @@ public class TestClass {
     @Epic(value = "Математика")
     @Feature(value = "Простые математические операции")
     @Story(value = "Сложение")
-    @Test
+//    @Test
     public void sumTest() {
         Steps.checkSummationStep(5, 4, 9);
     }
@@ -71,7 +71,7 @@ public class TestClass {
     @Epic(value = "Математика")
     @Feature(value = "Простые математические операции")
     @Story(value = "Вычитание")
-    @Test
+//    @Test
     public void subTest() {
         Steps.checkSubtractionStep(8, 2, 6);
     }
@@ -79,7 +79,7 @@ public class TestClass {
     @Epics(value = {@Epic(value = "Математика"), @Epic(value = "Геометрия")})
     @Features(value = {@Feature(value = "Тригонометрия"), @Feature(value = "Простые математические операции")})
     @Stories(value = {@Story(value = "Синус"), @Story(value = "Синусоида")})
-    @Test
+//    @Test
     public void checkSinTest() {
         Steps.checkSinStep(0, 0);
     }
@@ -110,4 +110,27 @@ public class TestClass {
     public void simpleTest17() {
         Assert.assertTrue(1 == 1);
     }
+
+    //Демонстрация работы категорий. Product defects
+    @Test
+    public void sumTestFailed() {
+        //какие-то проверки, в результате которых тест может упасть
+        Steps.checkSumStep(5, 6, 4);
+    }
+
+    //Демонстрация работы категорий. Test defects. traceRegex
+    @Test
+    public void testFailedNullPointerException() {
+        //какие-то проверки, которые могут вызывать NullPointerException
+        throw new NullPointerException();
+    }
+
+    //Демонстрация работы категорий. Test defects. messageRegex
+    @Test
+    public void testFailedException() throws Exception {
+        //какие-то проверки, которые могут вызывать Exception
+        throw new Exception("что-то пошло не так");
+    }
+
+
 }
