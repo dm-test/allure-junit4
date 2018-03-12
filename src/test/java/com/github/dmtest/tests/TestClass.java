@@ -91,10 +91,15 @@ public class TestClass {
         Assert.assertTrue(1 == 2);
     }
 
-    //FIXME: Как слинковать с дефектом в багтреккере?
-//    @Test
+    @Test
     @Issue(value = "FGY-4627")
     public void simpleTest15() {
+        Assert.assertTrue(1 == 1);
+    }
+
+    @Test
+    @TmsLink(value = "TL-678")
+    public void simpleTest18() {
         Assert.assertTrue(1 == 1);
     }
 
@@ -112,21 +117,21 @@ public class TestClass {
     }
 
     //Демонстрация работы категорий. Product defects
-    @Test
+//    @Test
     public void sumTestFailed() {
         //какие-то проверки, в результате которых тест может упасть
         Steps.checkSumStep(5, 6, 4);
     }
 
     //Демонстрация работы категорий. Test defects. traceRegex
-    @Test
+//    @Test
     public void testFailedNullPointerException() {
         //какие-то проверки, которые могут вызывать NullPointerException
         throw new NullPointerException();
     }
 
     //Демонстрация работы категорий. Test defects. messageRegex
-    @Test
+//    @Test
     public void testFailedException() throws Exception {
         //какие-то проверки, которые могут вызывать Exception
         throw new Exception("что-то пошло не так");
