@@ -3,6 +3,7 @@ package com.github.dmtest.tests;
 import com.github.dmtest.steps.Steps;
 import io.qameta.allure.*;
 import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.IOException;
 
@@ -59,40 +60,28 @@ public class TestClass {
         Assert.assertTrue(1 == 1);
     }
 
-    @Epic(value = "Новый эпик1")
-//    @Test
-    public void simpleTest8() {
-        Assert.assertTrue(1 == 1);
+    @Epic(value = "Математика")
+    @Feature(value = "Простые математические операции")
+    @Story(value = "Сложение")
+    @Test
+    public void sumTest() {
+        Steps.checkSummationStep(5, 4, 9);
     }
 
-    @Epic(value = "Новый эпик2")
-//    @Test
-    public void simpleTest9() {
-        Assert.assertTrue(1 == 1);
+    @Epic(value = "Математика")
+    @Feature(value = "Простые математические операции")
+    @Story(value = "Вычитание")
+    @Test
+    public void subTest() {
+        Steps.checkSubtractionStep(8, 2, 6);
     }
 
-    @Epics(value = {@Epic(value = "Новый эпик1"), @Epic(value = "Новый эпик2")})
-//    @Test
-    public void simpleTest10() {
-        Assert.assertTrue(1 == 1);
-    }
-
-    @Feature(value = "Новая фича1")
-//    @Test
-    public void simpleTest11() {
-        Assert.assertTrue(1 == 1);
-    }
-
-    @Feature(value = "Новая фича2")
-//    @Test
-    public void simpleTest12() {
-        Assert.assertTrue(1 == 1);
-    }
-
-    @Features(value = {@Feature(value = "Новая фича1"), @Feature(value = "Новая фича2")})
-//    @Test
-    public void simpleTest13() {
-        Assert.assertTrue(1 == 1);
+    @Epics(value = {@Epic(value = "Математика"), @Epic(value = "Геометрия")})
+    @Features(value = {@Feature(value = "Тригонометрия"), @Feature(value = "Простые математические операции")})
+    @Stories(value = {@Story(value = "Синус"), @Story(value = "Синусоида")})
+    @Test
+    public void checkSinTest() {
+        Steps.checkSinStep(0, 0);
     }
 
     //FIXME: Не помечается бомбочкой
