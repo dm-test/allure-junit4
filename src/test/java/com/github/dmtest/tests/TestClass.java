@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TestClass {
 
@@ -84,36 +85,40 @@ public class TestClass {
         Steps.checkSinStep(0, 0);
     }
 
-    //FIXME: Не помечается бомбочкой
+    @Test
     @Flaky
-//    @Test
-    public void simpleTest14() {
-        Assert.assertTrue(1 == 2);
+    public void testDemoFlaky() {
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 2);
+        if (randomNum == 0) {
+            Assert.assertTrue(true);
+        } else {
+            Assert.assertTrue(false);
+        }
     }
 
-    @Test
+//    @Test
     @Issue(value = "FGY-4627")
     public void simpleTest15() {
         Assert.assertTrue(1 == 1);
     }
 
-    @Test
+//    @Test
     @TmsLink(value = "TL-678")
     public void simpleTest18() {
         Assert.assertTrue(1 == 1);
     }
 
 //    @Test
-    @Link(name = "Ссылка", url = "http://sberbank.ru")
-    public void simpleTest16() {
-        Assert.assertTrue(1 == 1);
+    @Link(name = "Ссылка", url = "http://yandex.ru")
+    public void checkSubtractionWithLinkTest() {
+        Steps.checkSubtractionStep(15, 5, 10);
     }
 
 //    @Test
     @Links(value = {@Link(name = "Ссылка1", url = "http://sberbank.ru"),
             @Link(name = "Ссылка2", url = "http://yandex.ru")})
-    public void simpleTest17() {
-        Assert.assertTrue(1 == 1);
+    public void checkSubtractionWithLinksTest() {
+        Steps.checkSubtractionStep(14, 5, 9);
     }
 
     //Демонстрация работы категорий. Product defects
@@ -135,6 +140,12 @@ public class TestClass {
     public void testFailedException() throws Exception {
         //какие-то проверки, которые могут вызывать Exception
         throw new Exception("что-то пошло не так");
+    }
+
+//    @Test
+    @Owner(value = "Пупкин Валерий Иванович")
+    public void testDemoOwner() {
+        Steps.checkSumStep(1, 2, 3);
     }
 
 
