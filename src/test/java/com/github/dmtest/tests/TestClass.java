@@ -96,7 +96,7 @@ public class TestClass {
         }
     }
 
-//    @Test
+    @Test
     @Issue(value = "FGY-4627")
     public void simpleTest15() {
         Assert.assertTrue(1 == 1);

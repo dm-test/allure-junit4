@@ -60,7 +60,9 @@
                                 <resource>
                                     <directory>src/test/resources</directory>
                                     <includes>
+                                        <include>allure.properties</include>
                                         <include>environment.properties</include>
+                                        <include>categories.json</include>
                                     </includes>
                                 </resource>
                             </resources>
