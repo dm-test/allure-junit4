@@ -10,35 +10,35 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class TestClass {
 
-//    @Test
+    @Test
     public void simpleTest1() {
         Assert.assertTrue("Данное сообщение никогда не будет выведено", 3 + 2 == 5);
     }
 
-//    @Test
+    @Test
     public void simpleTest2() {
         Steps.checkSumStep(3, 2, 5);
         Steps.checkSumStep(5, 4, 9);
     }
 
-//    @Test
+    @Test
     public void simpleTest3() {
         Steps.checkSubtractionStep(10, 8, 2);
     }
 
-//    @Test
+    @Test
     public void simpleTest4() throws IOException {
         String darkSouls = "Dark souls 3";
         Steps.checkStringEqualsStep(darkSouls, darkSouls);
     }
 
-//    @Test
+    @Test
     public void simpleTest5() throws IOException {
         Steps.readJsonStep();
         Assert.assertTrue(true);
     }
 
-//    @Test
+    @Test
     public void simpleTest6() {
         Steps.addLinkSber();
         Assert.assertTrue(true);
@@ -49,13 +49,13 @@ public class TestClass {
      * dhshfdksjfkzjzkfjzkzzfzfzcz.
      * FIXME: Джавадок как дескрипшн не выводится
      */
-//    @Test
+    @Test
     @Description(useJavaDoc = true)
     public void simpleTest7() {
         Assert.assertTrue(1 == 1);
     }
 
-//    @Test
+    @Test
     @Description(value = "Тест проверяет эквивалентность единицы единице")
     public void simpleTest7_1() {
         Assert.assertTrue(1 == 1);
@@ -64,7 +64,7 @@ public class TestClass {
     @Epic(value = "Математика")
     @Feature(value = "Простые математические операции")
     @Story(value = "Сложение")
-//    @Test
+    @Test
     public void sumTest() {
         Steps.checkSummationStep(5, 4, 9);
     }
@@ -72,7 +72,7 @@ public class TestClass {
     @Epic(value = "Математика")
     @Feature(value = "Простые математические операции")
     @Story(value = "Вычитание")
-//    @Test
+    @Test
     public void subTest() {
         Steps.checkSubtractionStep(8, 2, 6);
     }
@@ -80,12 +80,12 @@ public class TestClass {
     @Epics(value = {@Epic(value = "Математика"), @Epic(value = "Геометрия")})
     @Features(value = {@Feature(value = "Тригонометрия"), @Feature(value = "Простые математические операции")})
     @Stories(value = {@Story(value = "Синус"), @Story(value = "Синусоида")})
-//    @Test
+    @Test
     public void checkSinTest() {
         Steps.checkSinStep(0, 0);
     }
 
-//    @Test
+    @Test
     @Flaky
     public void testDemoFlaky() {
         int randomNum = ThreadLocalRandom.current().nextInt(0, 2);
@@ -96,25 +96,25 @@ public class TestClass {
         }
     }
 
-//    @Test
+    @Test
     @Issue(value = "FGY-4627")
     public void simpleTest15() {
         Assert.assertTrue(1 == 1);
     }
 
-//    @Test
+    @Test
     @TmsLink(value = "TL-678")
     public void simpleTest18() {
         Assert.assertTrue(1 == 1);
     }
 
-//    @Test
+    @Test
     @Link(name = "Ссылка", url = "http://yandex.ru")
     public void checkSubtractionWithLinkTest() {
         Steps.checkSubtractionStep(15, 5, 10);
     }
 
-//    @Test
+    @Test
     @Links(value = {@Link(name = "Ссылка1", url = "http://sberbank.ru"),
             @Link(name = "Ссылка2", url = "http://yandex.ru")})
     public void checkSubtractionWithLinksTest() {
@@ -122,39 +122,39 @@ public class TestClass {
     }
 
     //Демонстрация работы категорий. Product defects
-//    @Test
+    @Test
     public void sumTestFailed() {
         //какие-то проверки, в результате которых тест может упасть
         Steps.checkSumStep(5, 6, 4);
     }
 
     //Демонстрация работы категорий. Test defects. traceRegex
-//    @Test
+    @Test
     public void testFailedNullPointerException() {
         //какие-то проверки, которые могут вызывать NullPointerException
         throw new NullPointerException();
     }
 
     //Демонстрация работы категорий. Test defects. messageRegex
-//    @Test
+    @Test
     public void testFailedException() throws Exception {
         //какие-то проверки, которые могут вызывать Exception
         throw new Exception("что-то пошло не так");
     }
 
-//    @Test
+    @Test
     @Owner(value = "Пупкин Валерий Иванович")
     public void testDemoOwner() {
         Steps.checkSumStep(1, 2, 3);
     }
 
-//    @Test
+    @Test
     @Muted
     public void testDemoMuted() {
         Steps.checkSubtractionStep(7, 2, 4);
     }
 
-//    @Test
+    @Test
     @Severity(value = SeverityLevel.BLOCKER)
     public void testDemoSeverity() {
         Steps.checkSubtractionStep(6, 1, 5);
