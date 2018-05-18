@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 import java.util.Collection;
 
-//@RunWith(Parameterized.class)
+@RunWith(Parameterized.class)
 public class ParamsTests {
 
     @Parameter
@@ -35,7 +35,7 @@ public class ParamsTests {
         });
     }
 
-//    @Test
+    @Test
     public void checkSum() {
         Assert.assertTrue("Сумма слагаемых не соответствует ожидаемому значению", operand1 + operand2 == expectedResult);
     }
